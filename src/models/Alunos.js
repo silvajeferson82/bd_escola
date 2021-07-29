@@ -5,7 +5,8 @@ class Alunos extends Model{
     super.init({
       name: DataTypes.STRING,
       email: DataTypes.STRING,
-      genero: DataTypes.STRING
+      genero: DataTypes.STRING,
+      datanascimento: DataTypes.STRING
     },{
       sequelize
     })
