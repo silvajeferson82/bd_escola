@@ -1,12 +1,12 @@
-const express = require('express');
-const AlunoController = require('./controllers/AlunoController');
-const ResponsavelController = require('./controllers/ResponsavelController');
+import express from 'express';
+import AlunoController from './controllers/AlunoController';
+import ResponsavelController from './controllers/ResponsavelController';
 
-const routes = express.Router();
+const alunoRoutes = express.Router();
 
-routes.post('/aluno',AlunoController.store);
-routes.get('/alunos',AlunoController.index);
+alunoRoutes.post('/aluno',AlunoController.store);
+alunoRoutes.get('/alunos',AlunoController.index);
 
-routes.post('/aluno/:aluno_id/responsavel',ResponsavelController.store);
+alunoRoutes.post('/aluno/:aluno_id/responsavel',ResponsavelController.store);
  
-module.exports = routes;
+export default alunoRoutes;

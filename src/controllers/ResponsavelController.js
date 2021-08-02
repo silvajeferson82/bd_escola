@@ -1,7 +1,7 @@
-const Responsavel = require('../models/Responsavel');
-const Aluno = require('../models/Alunos');
+import Responsavel from '../models/Responsavel';
+import Aluno from '../models/Alunos';
 
-module.exports = {
+class ResponsavelController {
   async store(req, res){
     const { name, profissao, cpf, datanascimento, genero, email } = req.body;
     const { aluno_id } = req.params;
@@ -19,3 +19,5 @@ module.exports = {
     return res.json(responsavel);
   }
 }
+
+export default new ResponsavelController();

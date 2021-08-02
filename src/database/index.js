@@ -1,12 +1,17 @@
-const Sequelize = require('sequelize');
-const dbConfig = require('../config/database');
+import Sequelize from 'sequelize'
+import dbConfig from '../config/database';
 
-const Aluno = require('../models/Alunos');
-const Responsavel = require('../models/Responsavel');
+import Aluno from '../models/Alunos';
+import Responsavel from '../models/Responsavel';
 
-const connection = new Sequelize(dbConfig);
+class Database{
+  init(){
 
-Aluno.init(connection);
-Responsavel.init(connection);
+    this.connection = new Sequelize(dbConfig);
 
-module.exports = connection;
+    Aluno.init(connection);
+    Responsavel.init(connection);
+  }
+}
+
+export default new Database();

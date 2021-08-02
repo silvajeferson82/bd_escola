@@ -1,16 +1,22 @@
-const { Model, DataTypes } = require('sequelize');
-
-class Alunos extends Model{
-  static init(sequelize){
-    super.init({
-      name: DataTypes.STRING,
-      email: DataTypes.STRING,
-      genero: DataTypes.STRING,
-      datanascimento: DataTypes.STRING
+module.exports = function(sequelize ,Model, DataTypes){
+  return sequelize.dfine(
+    'alunos',{
+      name: {
+        type: DataTypes.STRING,
+      },
+      email: {
+        type: DataTypes.STRING,
+      },
+      genero: {
+        type: DataTypes.STRING
+      },
+      datanascimento:{ 
+        type:DataTypes.STRING,
+      }
     },{
-      sequelize
-    })
-  }
+      tableName: 'alunos'
+    });
 }
 
-module.exports = Alunos;
+
+

@@ -1,11 +1,12 @@
-const Aluno = require('../models/Alunos');
+import Aluno from '../models/Alunos';
 
-module.exports = {
+class AlunoController {
   async index(req,res){
     const alunos = await Aluno.findAll();
 
     return res.json(alunos);
-  },
+  }
+
   async store(req, res){
     const {name, genero, email, datanascimento } = req.body;
 
@@ -14,3 +15,5 @@ module.exports = {
     return res.json(aluno);
   }
 }
+
+export default new AlunoController();
